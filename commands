@@ -1,11 +1,14 @@
 ```
 # 1) create project skeleton
 
+
 ```bash
 mkdir -p ~/cloud-pm-demo-app/app/frontend ~/cloud-pm-demo-app/docs ~/cloud-pm-demo-app/docs/media
 cd ~/cloud-pm-demo-app
 git init
 ```
+
+
 
 # 2) create README
 ```bash
@@ -16,14 +19,20 @@ This repo contains a small static frontend served by Node (Express), dockerized 
 EOF
 ```
 
+
+
 # 3) .gitignore
+
+```bash
 cat > .gitignore <<'EOF'
 node_modules/
 docs/media/
 .env
 EOF
+```
 
 # 4) frontend package.json
+```bash
 cat > app/frontend/package.json <<'EOF'
 {
   "name": "cloud-pm-demo-frontend",
@@ -37,8 +46,10 @@ cat > app/frontend/package.json <<'EOF'
   }
 }
 EOF
+```
 
 # 5) simple Express server with health endpoint
+```bash
 cat > app/frontend/server.js <<'EOF'
 const express = require('express');
 const path = require('path');
@@ -55,8 +66,10 @@ app.listen(PORT, () => {
   console.log(`Frontend demo listening on port ${PORT}`);
 });
 EOF
+```
 
 # 6) index.html
+```bash
 mkdir -p app/frontend/public
 cat > app/frontend/public/index.html <<'EOF'
 <!doctype html>
@@ -86,6 +99,7 @@ cat > app/frontend/public/index.html <<'EOF'
   </body>
 </html>
 EOF
+```
 
 # 7) Dockerfile
 cat > app/frontend/Dockerfile <<'EOF'
