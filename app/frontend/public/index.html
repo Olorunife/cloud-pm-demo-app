@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Cloud PM Demo</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 40px; text-align:center; }
+      .card { max-width:700px; margin:0 auto; border-radius:12px; padding:24px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+      h1 { margin-bottom:8px }
+      p { color:#444 }
+      .status { margin-top:18px; font-weight:600; color: #0b6623; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Cloud PM Demo App</h1>
+      <p>This is a small static + Node frontend used for the Reference Migration flagship case.</p>
+      <p class="status" id="status">Checking health...</p>
+      <script>
+        fetch('/health').then(r=>r.json()).then(d=>{
+          document.getElementById('status').innerText = 'Health: ' + d.status + ' — ' + new Date(d.ts).toLocaleString();
+        }).catch(()=>{ document.getElementById('status').innerText = 'Health: unreachable'; });
+      </script>
+    </div>
+  </body>
+</html>
