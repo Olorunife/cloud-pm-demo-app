@@ -1,6 +1,28 @@
+
 # Cloud PM Demo App
 Public demo used for a Reference Migration proof asset.
 This repo contains a small static frontend served by Node (Express), dockerized and runnable via docker compose.
+
+# Cloud Migration Demo (Frontend: Static + Node)
+
+This repository demonstrates a **3-tier demo app migration project** with measurable success criteria.
+
+## Structure
+- `app/frontend/` → Static + Node frontend app
+- `docs/success-criteria.md` → Business & technical success metrics
+
+## Demo Goal
+Simulate migration of a simple Node-based frontend to a cloud-native setup, showing improvements in:
+- Reliability
+- Deployment frequency
+- Latency
+
+## Getting Started
+1. Clone repo  
+2. Navigate to `app/frontend/`  
+3. Run with Docker (instructions inside frontend README)
+
+
 
 
 # 1) create project skeleton
